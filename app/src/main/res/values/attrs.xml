@@ -4,7 +4,8 @@
     <declare-styleable name="MyView">
         <attr name="mainText" format="string" />
         <attr name="extraText" format="string" />
-        </declare-styleable>
+        <attr name="icon" format="reference" />
+    </declare-styleable>
 
 
 </resources>
