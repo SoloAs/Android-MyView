@@ -1,11 +1,14 @@
 package com.example.alexander.myview;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
 
 import java.util.ArrayList;
@@ -35,6 +38,19 @@ public class MyActivity extends Activity {
         ListView lvMyAct = (ListView) findViewById(R.id.MyListView);
         lvMyAct.setAdapter(adapter);
 
+
+        lvMyAct.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            public void onItemClick(AdapterView<?> parent, View view,
+                                    int position, long id) {
+                Intent intent = new Intent(MyActivity.this, MySecondActivity.class);
+                intent.putExtra("selectedItem", position);
+
+
+                startActivity(intent);
+
+
+            }
+        });
 
     }
 
