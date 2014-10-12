@@ -12,7 +12,7 @@ import android.widget.TextView;
 /**
  * Created by Alexander on 9/30/2014.
  */
-public class MyView extends RelativeLayout {
+public class MyView extends RelativeLayout{
 
     private TextView mainText;
     private TextView extraText;
@@ -49,10 +49,11 @@ public class MyView extends RelativeLayout {
 
             iconView = (ImageView) findViewById(R.id.custom_view_icon);
             mainText = (TextView) findViewById(R.id.custom_view_name);
-            extraText = (TextView) findViewById(R.id.custom_view_work);
+            extraText = (TextView) findViewById(R.id.custom_view_phone);
 
             mainText.setText(mMainText);
             extraText.setText(mExtraText);
+            iconView.setScaleType(ImageView.ScaleType.FIT_CENTER);
             iconView.setImageDrawable(icon);
 
             invalidate();
@@ -63,7 +64,10 @@ public class MyView extends RelativeLayout {
         }
     }
 
-    public void populate(Object o) {
-        //TOOD populate
+    public void populate(User user) {
+        mainText.setText(user.getName());
+        extraText.setText(user.getPhone());
+        iconView.setImageDrawable(this.getContext().getResources().getDrawable(user.getAvatar()));
+       // isChecked.setChecked(false);
     }
 }
