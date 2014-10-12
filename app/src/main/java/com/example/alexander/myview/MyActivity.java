@@ -24,15 +24,15 @@ public class MyActivity extends Activity {
         users = new ArrayList<User>() {
             {
                 add(new User("name1", "phone1", R.drawable.mario_icon));
-                add(new User("name2", "phone2", R.drawable.mario_icon));
-                add(new User("name3", "phone3", R.drawable.mario_icon));
-                add(new User("name4", "phone4", R.drawable.mario_icon));
-                add(new User("name5", "phone5", R.drawable.mario_icon));
+                add(new User("name2", "phone2", R.drawable.i_icon));
+                add(new User("name3", "phone3", R.drawable.ic_launcher));
+                add(new User("name4", "phone4", R.drawable.mac_icon));
+                add(new User("name5", "phone5", R.drawable.ubuntu_icon));
             }
         };
         MyViewAdapter adapter = new MyViewAdapter(this, users);
         // находим список
-        ListView lvMyAct = (ListView) findViewById(R.id.myListView);
+        ListView lvMyAct = (ListView) findViewById(R.id.MyListView);
         lvMyAct.setAdapter(adapter);
 
 

@@ -25,14 +25,15 @@ public class MyViewAdapter extends ArrayAdapter<User> {
 
         MyView view = (MyView)convertView;
         if (view == null) {
-        //    LayoutInflater inflater = (LayoutInflater) getContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        //    convertView = inflater.inflate(R.layout.my_view_layout, null);
-
-        //    convertView.setTag(view);
             view = new MyView(getContext());
         }
         view.populate(users.get(position));
         return view;
 
     }
+    @Override
+    public int getCount() {
+        return users.size();
+    }
+
 }
